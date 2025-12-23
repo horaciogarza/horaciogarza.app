@@ -1,1 +1,78 @@
 
+Privacy Policy for Codename Clefairy
+  Last Updated: December 23, 2025
+
+  This Privacy Policy describes how Codename Clefairy ("we," "us," or "our")
+  handles data in our iOS application. We are committed to protecting your
+  privacy and being transparent about the minimal data processed by our app.
+
+  1. Data Collection and Usage
+  Our application is designed to prioritize user privacy. We do not require a
+  user account, and we do not collect personal identifiers such as your name,
+  email address, phone number, or physical location.
+
+   * Game Progress (Local Data): We store your high scores and game
+     preferences locally on your device using standard Apple storage
+     (UserDefaults). This data remains on your device and is not transmitted
+     to our servers.
+   * Thematic Customization: The application uses your device's local system
+     clock to provide seasonal emoji themes (e.g., holiday-themed graphics).
+     This calculation happens entirely on-device.
+
+  2. Third-Party Services
+  To support the development and maintenance of this application, we use
+  third-party service providers who may collect data according to their own
+  privacy policies.
+
+   * Google AdMob: Our app integrates the Google Mobile Ads SDK to display
+     advertisements. AdMob may collect and use information such as:
+       * Device identifiers (e.g., IDFA, where permitted).
+       * IP addresses (for general location estimation and fraud prevention).
+       * Interactions with advertisements (clicks and views).
+       * Diagnostic information for SDK performance.
+
+  For more information, please visit Google’s Privacy & Terms
+  (https://policies.google.com/privacy).
+
+  3. Device Permissions
+  The application requires the following minimal permissions:
+   * Network Access: Required to fetch and display advertisements via Google
+     AdMob.
+
+  The app does not request access to your Camera, Microphone, Contacts, or
+  Precise Location (GPS).
+
+  4. Children’s Privacy
+  Codename Clefairy is a family-friendly game. We do not knowingly collect
+  personal information from children. Our advertising partners may serve
+  non-personalized ads in compliance with applicable laws like COPPA
+  (Children's Online Privacy Protection Act) depending on the configuration of
+  the AdMob network.
+
+  5. Your Rights and Choices
+   * Opting Out of Tracking: You can limit ad tracking or reset your
+     advertising identifier through your iOS device settings (Settings >
+     Privacy & Security > Tracking).
+   * Data Deletion: Since we do not store your data on our servers, you can
+     "delete" all game-related data simply by uninstalling the application
+     from your device.
+
+  6. Changes to This Policy
+  We may update our Privacy Policy from time to time. We will notify you of
+  any changes by posting the new Privacy Policy on this page and updating the
+  "Last Updated" date.
+
+  7. Contact Us
+  If you have any questions or suggestions about our Privacy Policy, do not
+  hesitate to contact our development team.
+
+  ---
+
+  Developer/Legal Analysis Note:
+   * Tracking Compliance: The current codebase initializes MobileAds but does
+     not currently implement the AppTrackingTransparency (ATT) framework
+     prompt. To comply with Apple’s App Store Review Guidelines (Guideline
+     5.1.2), if you intend to use the IDFA for personalized tracking, an ATT
+     implementation would be required in a future update.
+   * Data Minimization: The app adheres strictly to data minimization
+     principles, as no personal data is exfiltrated to first-party servers.
