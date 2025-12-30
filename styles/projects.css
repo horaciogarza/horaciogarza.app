@@ -1,0 +1,211 @@
+/* =====================================================
+   PROJECT SHOWCASE STYLES
+   For X bot and other projects
+   ===================================================== */
+
+/* Projects Section */
+.projects-section {
+    margin-bottom: var(--space-3xl);
+}
+
+.project-showcase {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Project Card */
+.project-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s ease;
+}
+
+.project-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+/* Project Header */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-lg);
+}
+
+.project-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(217, 120, 69, 0.1);
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+    background: rgba(217, 120, 69, 0.15);
+    transform: scale(1.05);
+}
+
+.project-link-badge {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-accent-orange);
+    padding: var(--space-xs) var(--space-md);
+    background: rgba(217, 120, 69, 0.1);
+    border: 1px solid rgba(217, 120, 69, 0.2);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', monospace;
+}
+
+.project-link-badge:hover {
+    background: rgba(217, 120, 69, 0.2);
+    transform: translateY(-2px);
+    border-bottom: 1px solid rgba(217, 120, 69, 0.2);
+}
+
+/* Project Content */
+.project-content {
+    margin-bottom: var(--space-lg);
+}
+
+.project-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-md);
+    color: var(--color-ink);
+}
+
+.project-description {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    color: var(--color-ink-light);
+    margin-bottom: var(--space-md);
+}
+
+.project-quote {
+    font-family: var(--font-display);
+    font-size: var(--font-size-lg);
+    font-style: italic;
+    color: var(--color-ink-lighter);
+    border-left: 3px solid var(--color-accent-orange);
+    padding-left: var(--space-md);
+    margin: var(--space-lg) 0;
+    line-height: 1.6;
+}
+
+/* Project Footer */
+.project-footer {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+}
+
+/* Outline Button for Projects */
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--color-ink);
+    color: var(--color-ink);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    padding: var(--space-sm) var(--space-xl);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-outline:hover {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-ink);
+}
+
+.btn-outline:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design for Projects */
+@media (max-width: 768px) {
+    .project-card {
+        padding: var(--space-xl);
+    }
+
+    .project-header {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-md);
+        text-align: center;
+    }
+
+    .project-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .project-title {
+        font-size: var(--font-size-xl);
+        text-align: center;
+    }
+
+    .project-description {
+        text-align: center;
+    }
+
+    .project-quote {
+        font-size: var(--font-size-base);
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        padding: var(--space-lg);
+    }
+
+    .project-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .project-icon svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .project-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .project-description {
+        font-size: var(--font-size-sm);
+    }
+
+    .project-quote {
+        font-size: var(--font-size-sm);
+        padding-left: var(--space-sm);
+        border-left-width: 2px;
+    }
+
+    .project-link-badge {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .btn-outline {
+        width: 100%;
+        padding: var(--space-sm) var(--space-lg);
+        font-size: var(--font-size-sm);
+    }
+}
