@@ -3,69 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Horacio Garza - iOS Developer creating thoughtful applications">
-    <title>Horacio Garza</title>
+    <meta name="description" content="Horacio Garza - iOS Developer creating thoughtful, beautiful applications">
+    <meta name="theme-color" content="#F5F2EA">
+    <title>Horacio Garza - iOS Developer</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/premium.css">
 </head>
 <body>
-    <div class="container container-narrow">
+    <!-- Load SVG Illustrations -->
+    <div style="display: none;">
+        <object data="assets/illustrations.svg" type="image/svg+xml"></object>
+    </div>
+
+    <div class="container container-wide">
         <!-- Navigation -->
-        <nav class="nav-floating">
+        <nav class="nav-floating animate-on-scroll fade-in">
             <div class="nav-brand">HG</div>
             <div class="nav-links">
                 <a href="#apps" class="nav-link">Apps</a>
+                <a href="#about" class="nav-link">About</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
         </nav>
 
         <!-- Hero Section -->
-        <section class="hero">
-            <h1 class="hero-title">Hello World!</h1>
-            <p class="hero-subtitle">Creating thoughtful applications for iOS</p>
+        <section class="hero premium-hero">
+            <div class="hero-content">
+                <h1 class="hero-title gradient-text animate-on-scroll fade-in-up">
+                    Hello World!
+                </h1>
+                <p class="hero-subtitle animate-on-scroll fade-in-up stagger-2">
+                    Creating thoughtful, beautiful applications for iOS
+                </p>
+                <p class="hero-description animate-on-scroll fade-in-up stagger-3">
+                    Every pixel tells a story. Every interaction matters.
+                </p>
+            </div>
+
+            <!-- Floating illustration -->
+            <div class="hero-illustration parallax-element" data-parallax-speed="0.3">
+                <svg class="illustration-float" width="300" height="300" viewBox="0 0 200 200">
+                    <use href="assets/illustrations.svg#light-bulb"/>
+                </svg>
+            </div>
         </section>
 
         <hr class="divider">
 
         <!-- Apps Section -->
-        <section id="apps" class="section">
-            <h2>Applications</h2>
+        <section id="apps" class="section apps-section">
+            <h2 class="section-title reveal-on-scroll">Applications</h2>
+            <p class="section-subtitle reveal-on-scroll">
+                Crafted with care, designed for delight
+            </p>
 
-            <div class="card">
-                <span class="badge">iOS</span>
-                <h3>Memorandum</h3>
-                <p>A family-friendly game designed with privacy at its core. Featuring seasonal themes and minimal data collection, Memorandum offers an engaging experience without compromising user privacy.</p>
-                <div class="footer-links">
-                    <a href="Memorandum/privacy.html">Privacy Policy</a>
-                    <a href="Memorandum/support.html">Support</a>
-                </div>
+            <div class="apps-grid">
+                <!-- Memorandum App Card -->
+                <article class="app-card card-hover-lift reveal-on-scroll gpu-accelerated">
+                    <div class="app-card-header">
+                        <div class="app-icon parallax-element" data-parallax-speed="0.2">
+                            <svg width="100" height="100" viewBox="0 0 200 200">
+                                <use href="assets/illustrations.svg#memory-card"/>
+                            </svg>
+                        </div>
+                        <span class="badge badge-available">Available Now</span>
+                    </div>
+
+                    <div class="app-card-content">
+                        <h3 class="app-title">Memorandum</h3>
+                        <p class="app-tagline">Memorize and Win</p>
+                        <p class="app-description">
+                            A delightful memory game that brings joy to players of all ages.
+                            Test your memory with charming seasonal themes while enjoying a
+                            privacy-first experience.
+                        </p>
+
+                        <div class="app-features">
+                            <span class="feature-tag">Family Friendly</span>
+                            <span class="feature-tag">Seasonal Themes</span>
+                            <span class="feature-tag">Privacy First</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card-footer">
+                        <a href="https://apps.apple.com/mx/app/memorandum-memorize-and-win/id6756941530"
+                           class="app-store-btn app-store-shimmer magnetic-btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg width="120" height="40" viewBox="0 0 120 40" style="display: block;">
+                                <rect width="120" height="40" rx="8" fill="#000"/>
+                                <g fill="#fff">
+                                    <path d="M 24.769 20.3 C 24.745 17.417 27.076 15.927 27.189 15.854 C 25.822 13.842 23.684 13.555 22.946 13.532 C 21.121 13.339 19.364 14.627 18.436 14.627 C 17.492 14.627 16.065 13.549 14.546 13.58 C 12.607 13.611 10.792 14.754 9.783 16.512 C 7.705 20.092 9.241 25.327 11.234 28.204 C 12.23 29.616 13.385 31.192 14.901 31.137 C 16.388 31.076 16.947 30.178 18.733 30.178 C 20.502 30.178 21.03 31.137 22.576 31.102 C 24.169 31.076 25.16 29.693 26.123 28.267 C 27.276 26.621 27.747 25.002 27.768 24.918 C 27.73 24.904 24.797 23.789 24.769 20.3 Z"/>
+                                    <path d="M 21.957 11.5 C 22.766 10.484 23.315 9.082 23.154 7.666 C 21.957 7.721 20.488 8.54 19.647 9.534 C 18.899 10.401 18.248 11.848 18.426 13.222 C 19.774 13.321 21.164 12.502 21.957 11.5 Z"/>
+                                    <text x="38" y="16" font-size="9" font-weight="normal" font-family="Helvetica, sans-serif">Download on the</text>
+                                    <text x="38" y="28" font-size="14" font-weight="bold" font-family="Helvetica, sans-serif">App Store</text>
+                                </g>
+                            </svg>
+                        </a>
+                        <div class="app-links">
+                            <a href="Memorandum/privacy.html" class="text-link">Privacy</a>
+                            <span class="separator">•</span>
+                            <a href="Memorandum/support.html" class="text-link">Support</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Light and Year App Card -->
+                <article class="app-card card-hover-lift reveal-on-scroll gpu-accelerated">
+                    <div class="app-card-header">
+                        <div class="app-icon parallax-element" data-parallax-speed="0.2">
+                            <svg width="100" height="100" viewBox="0 0 200 200">
+                                <use href="assets/illustrations.svg#light-bulb"/>
+                            </svg>
+                        </div>
+                        <span class="badge badge-available">Available Now</span>
+                    </div>
+
+                    <div class="app-card-content">
+                        <h3 class="app-title">Light and Year</h3>
+                        <p class="app-tagline">Illuminate Your Journey</p>
+                        <p class="app-description">
+                            An elegant and thoughtful companion app that brightens your daily experience.
+                            Designed with simplicity and beauty in mind.
+                        </p>
+
+                        <div class="app-features">
+                            <span class="feature-tag">Elegant Design</span>
+                            <span class="feature-tag">Daily Companion</span>
+                            <span class="feature-tag">Minimalist</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card-footer">
+                        <a href="https://apps.apple.com/mx/app/light-and-year/id6756282999"
+                           class="app-store-btn app-store-shimmer magnetic-btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg width="120" height="40" viewBox="0 0 120 40" style="display: block;">
+                                <rect width="120" height="40" rx="8" fill="#000"/>
+                                <g fill="#fff">
+                                    <path d="M 24.769 20.3 C 24.745 17.417 27.076 15.927 27.189 15.854 C 25.822 13.842 23.684 13.555 22.946 13.532 C 21.121 13.339 19.364 14.627 18.436 14.627 C 17.492 14.627 16.065 13.549 14.546 13.58 C 12.607 13.611 10.792 14.754 9.783 16.512 C 7.705 20.092 9.241 25.327 11.234 28.204 C 12.23 29.616 13.385 31.192 14.901 31.137 C 16.388 31.076 16.947 30.178 18.733 30.178 C 20.502 30.178 21.03 31.137 22.576 31.102 C 24.169 31.076 25.16 29.693 26.123 28.267 C 27.276 26.621 27.747 25.002 27.768 24.918 C 27.73 24.904 24.797 23.789 24.769 20.3 Z"/>
+                                    <path d="M 21.957 11.5 C 22.766 10.484 23.315 9.082 23.154 7.666 C 21.957 7.721 20.488 8.54 19.647 9.534 C 18.899 10.401 18.248 11.848 18.426 13.222 C 19.774 13.321 21.164 12.502 21.957 11.5 Z"/>
+                                    <text x="38" y="16" font-size="9" font-weight="normal" font-family="Helvetica, sans-serif">Download on the</text>
+                                    <text x="38" y="28" font-size="14" font-weight="bold" font-family="Helvetica, sans-serif">App Store</text>
+                                </g>
+                            </svg>
+                        </a>
+                        <div class="app-links">
+                            <a href="#contact" class="text-link">Contact</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Explorare App Card -->
+                <article class="app-card card-hover-lift reveal-on-scroll gpu-accelerated">
+                    <div class="app-card-header">
+                        <div class="app-icon parallax-element" data-parallax-speed="0.2">
+                            <svg width="100" height="100" viewBox="0 0 200 200">
+                                <use href="assets/illustrations.svg#restaurant"/>
+                            </svg>
+                        </div>
+                        <span class="badge badge-soon">Coming Soon</span>
+                    </div>
+
+                    <div class="app-card-content">
+                        <h3 class="app-title">Explorare</h3>
+                        <p class="app-tagline">Discover Culinary Delights</p>
+                        <p class="app-description">
+                            Find your next favorite restaurant with an intuitive swipe-based interface.
+                            Personalized recommendations based on your location and preferences.
+                        </p>
+
+                        <div class="app-features">
+                            <span class="feature-tag">Location Based</span>
+                            <span class="feature-tag">Swipe Interface</span>
+                            <span class="feature-tag">Personalized</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card-footer">
+                        <div class="coming-soon-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <use href="assets/illustrations.svg#sparkle"/>
+                            </svg>
+                            <span>Launching Soon</span>
+                        </div>
+                        <div class="app-links">
+                            <a href="explorare/privacy.html" class="text-link">Privacy</a>
+                            <span class="separator">•</span>
+                            <a href="explorare/support.html" class="text-link">Support</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Atlas App Card -->
+                <article class="app-card card-hover-lift reveal-on-scroll gpu-accelerated">
+                    <div class="app-card-header">
+                        <div class="app-icon parallax-element" data-parallax-speed="0.2">
+                            <svg width="100" height="100" viewBox="0 0 200 200">
+                                <use href="assets/illustrations.svg#atlas-map"/>
+                            </svg>
+                        </div>
+                        <span class="badge badge-soon">Coming Soon</span>
+                    </div>
+
+                    <div class="app-card-content">
+                        <h3 class="app-title">Atlas</h3>
+                        <p class="app-tagline">Navigate Your World</p>
+                        <p class="app-description">
+                            A thoughtfully designed navigation and exploration tool.
+                            Beautiful maps meet intuitive wayfinding.
+                        </p>
+
+                        <div class="app-features">
+                            <span class="feature-tag">Navigation</span>
+                            <span class="feature-tag">Exploration</span>
+                            <span class="feature-tag">Beautiful Maps</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card-footer">
+                        <div class="coming-soon-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <use href="assets/illustrations.svg#sparkle"/>
+                            </svg>
+                            <span>In Development</span>
+                        </div>
+                        <div class="app-links">
+                            <a href="#contact" class="text-link">Get Updates</a>
+                        </div>
+                    </div>
+                </article>
             </div>
+        </section>
 
-            <div class="card">
-                <span class="badge">iOS</span>
-                <h3>Explorare</h3>
-                <p>Discover restaurants near you with an intuitive swipe-based interface. Explorare helps you find your next favorite dining spot with personalized recommendations and location-based search.</p>
-                <div class="footer-links">
-                    <a href="explorare/privacy.html">Privacy Policy</a>
-                    <a href="explorare/support.html">Support</a>
-                </div>
+        <hr class="divider">
+
+        <!-- About Section -->
+        <section id="about" class="section about-section reveal-on-scroll">
+            <div class="about-content">
+                <h2>About</h2>
+                <p class="lead-text">
+                    I'm an iOS developer who believes that great software should be both
+                    functional and beautiful. Every app I create is crafted with attention
+                    to detail, user privacy, and delightful experiences.
+                </p>
+                <p>
+                    From concept to launch, I focus on creating apps that people love to use.
+                    Whether it's a game, a utility, or a companion app, I pour care into every
+                    pixel and interaction.
+                </p>
             </div>
         </section>
 
         <hr class="divider">
 
         <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h2>Get in Touch</h2>
-            <p>For inquiries, support, or feedback regarding any of my applications, feel free to reach out.</p>
+        <section id="contact" class="section contact-section reveal-on-scroll">
+            <h2 class="text-center">Get in Touch</h2>
+            <p class="text-center section-subtitle">
+                Have questions, feedback, or just want to say hello?
+            </p>
             <p class="text-center mt-lg">
-                <a href="mailto:hgx95@hotmail.com" class="btn btn-primary">Contact</a>
+                <a href="mailto:hgx95@hotmail.com" class="btn btn-primary magnetic-btn">
+                    Contact Me
+                </a>
             </p>
         </section>
 
         <!-- Footer -->
         <footer class="footer">
-            <p>&copy; 2025 Horacio Garza. All rights reserved.</p>
+            <div class="footer-content">
+                <p>&copy; 2025 Horacio Garza. Crafted with care.</p>
+                <div class="footer-decoration">
+                    <svg width="30" height="30" viewBox="0 0 24 24">
+                        <use href="assets/illustrations.svg#star" style="color: var(--color-accent-orange);"/>
+                    </svg>
+                </div>
+            </div>
         </footer>
     </div>
+
+    <!-- Scripts -->
+    <script src="scripts/animations.js"></script>
 </body>
 </html>
