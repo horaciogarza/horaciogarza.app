@@ -387,23 +387,140 @@
     .lead-text {
         font-size: var(--font-size-lg);
     }
+
+    /* Disable hover effects on mobile */
+    .app-card:hover {
+        transform: none;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .app-card:active {
+        transform: scale(0.98);
+    }
+
+    /* Better touch spacing */
+    .app-links {
+        gap: var(--space-md);
+        flex-wrap: wrap;
+    }
+
+    .text-link {
+        padding: var(--space-xs) 0;
+    }
 }
 
 @media (max-width: 480px) {
+    .premium-hero {
+        min-height: 40vh;
+        padding: var(--space-xl) 0;
+    }
+
+    .hero-title {
+        font-size: var(--font-size-3xl);
+        line-height: 1.1;
+        margin-bottom: var(--space-sm);
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--space-sm);
+    }
+
+    .hero-description {
+        font-size: var(--font-size-sm);
+        margin-top: var(--space-sm);
+    }
+
+    .apps-grid {
+        gap: var(--space-md);
+    }
+
+    .app-card {
+        padding: var(--space-md);
+    }
+
     .app-card-header {
         flex-direction: column;
         align-items: center;
-        gap: var(--space-md);
+        gap: var(--space-sm);
+        text-align: center;
+    }
+
+    .app-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .app-title {
+        font-size: var(--font-size-xl);
+        text-align: center;
+    }
+
+    .app-tagline {
+        font-size: var(--font-size-sm);
+        text-align: center;
+    }
+
+    .app-description {
+        font-size: var(--font-size-sm);
         text-align: center;
     }
 
     .app-features {
         justify-content: center;
+        gap: 6px;
     }
 
     .feature-tag {
         font-size: 10px;
-        padding: 3px 10px;
+        padding: 4px 8px;
+    }
+
+    .app-card-footer {
+        gap: var(--space-sm);
+        padding-top: var(--space-sm);
+    }
+
+    .app-store-btn svg {
+        width: 100px;
+        height: 33px;
+    }
+
+    .coming-soon-badge {
+        padding: var(--space-xs) var(--space-sm);
+        font-size: 11px;
+    }
+
+    .coming-soon-badge svg {
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+    }
+
+    .app-links {
+        font-size: 12px;
+    }
+
+    .section-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .section-subtitle {
+        font-size: var(--font-size-sm);
+        padding: 0 var(--space-md);
+    }
+
+    .lead-text {
+        font-size: var(--font-size-base);
+    }
+
+    .btn-primary {
+        font-size: var(--font-size-base);
+        padding: var(--space-sm) var(--space-xl);
+    }
+
+    .contact-section {
+        padding: var(--space-2xl) 0;
     }
 }
 

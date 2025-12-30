@@ -1,0 +1,318 @@
+/* =====================================================
+   MOBILE WEB OPTIMIZATIONS
+   Touch interactions, performance, and mobile UX
+   ===================================================== */
+
+/* Mobile-first touch optimizations */
+@media (max-width: 768px) {
+    /* Disable animations that are too heavy on mobile */
+    body::before {
+        opacity: 0.2;
+    }
+
+    /* Optimize scroll performance */
+    * {
+        -webkit-tap-highlight-color: rgba(217, 120, 69, 0.2);
+        -webkit-touch-callout: none;
+    }
+
+    /* Better font rendering on mobile */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    /* Prevent zoom on input focus (iOS) */
+    input, textarea, select {
+        font-size: 16px !important;
+    }
+
+    /* Improve scrolling on iOS */
+    html {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Better button touch targets */
+    button, a, .btn, .nav-link {
+        -webkit-tap-highlight-color: rgba(217, 120, 69, 0.2);
+        touch-action: manipulation;
+    }
+
+    /* Optimize images for mobile */
+    img, svg {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Reduce particle count on mobile */
+    .particles-container .particle:nth-child(n+16) {
+        display: none;
+    }
+
+    /* Simplify parallax on mobile */
+    .parallax-element {
+        transform: none !important;
+    }
+
+    /* Disable hover effects, use active instead */
+    .card-hover-lift:hover {
+        transform: none;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .card-hover-lift:active {
+        transform: scale(0.98);
+        box-shadow: var(--shadow-md);
+    }
+
+    /* Disable mouse trail on mobile */
+    .cursor-trail {
+        display: none;
+    }
+
+    /* Optimize 3D transforms for mobile */
+    .app-card {
+        transform: none !important;
+    }
+
+    .app-card:active {
+        transform: scale(0.98) !important;
+    }
+
+    /* Better spacing for mobile */
+    .section {
+        margin-bottom: var(--space-2xl);
+    }
+
+    /* Optimize navigation for mobile */
+    .nav-floating {
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    /* Better hero section for mobile */
+    .hero-content {
+        padding: 0 var(--space-md);
+    }
+
+    /* Center all text on mobile for better readability */
+    .app-card-content h3,
+    .app-card-content .app-tagline,
+    .app-card-content .app-description {
+        text-align: center;
+    }
+}
+
+/* Extra small devices optimization */
+@media (max-width: 375px) {
+    :root {
+        --font-size-4xl: 1.75rem;
+        --font-size-3xl: 1.5rem;
+        --font-size-2xl: 1.25rem;
+        --font-size-xl: 1.125rem;
+    }
+
+    .container {
+        padding: var(--space-sm);
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+        word-break: break-word;
+    }
+
+    .app-card {
+        padding: var(--space-sm);
+    }
+
+    .app-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .feature-tag {
+        font-size: 9px;
+        padding: 3px 6px;
+    }
+
+    .app-store-btn svg {
+        width: 90px;
+        height: 30px;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .premium-hero {
+        min-height: 60vh;
+    }
+
+    .hero-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .nav-floating {
+        padding: 6px 12px;
+    }
+}
+
+/* Touch-friendly utilities */
+.touch-friendly {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Prevent text selection on buttons */
+.btn, .nav-link, .app-store-btn {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+/* Active states for better feedback */
+.btn:active,
+.app-store-btn:active {
+    transform: scale(0.96);
+    opacity: 0.8;
+}
+
+/* Optimize animations for mobile performance */
+@media (max-width: 768px) {
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes floatSlow {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Reduce animation complexity */
+    .illustration-float,
+    .illustration-float-alt {
+        animation-duration: 6s;
+    }
+
+    /* Simplify blob animations */
+    .blob-shape {
+        animation: none;
+        opacity: 0.3;
+    }
+}
+
+/* iOS-specific fixes */
+@supports (-webkit-touch-callout: none) {
+    /* Fix for iOS Safari bottom bar */
+    .premium-hero {
+        min-height: calc(100vh - env(safe-area-inset-bottom));
+    }
+
+    /* Safe area insets for iPhone X and newer */
+    .nav-floating {
+        padding-left: max(var(--space-md), env(safe-area-inset-left));
+        padding-right: max(var(--space-md), env(safe-area-inset-right));
+    }
+
+    .container {
+        padding-left: max(var(--space-lg), env(safe-area-inset-left));
+        padding-right: max(var(--space-lg), env(safe-area-inset-right));
+    }
+
+    /* Fix for iOS Safari address bar height */
+    .hero {
+        padding-top: calc(var(--space-3xl) + env(safe-area-inset-top));
+    }
+}
+
+/* Android Chrome-specific fixes */
+@supports (display: -webkit-box) {
+    .nav-floating {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+}
+
+/* Reduce motion for accessibility and battery saving */
+@media (prefers-reduced-motion: reduce) {
+    .particles-container,
+    .floating-shapes-container,
+    .illustration-float,
+    .blob-shape {
+        display: none;
+    }
+
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Dark mode optimization (optional) */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+    /* Uncomment to enable dark mode on mobile */
+    /*
+    body {
+        background-color: #1a1815;
+    }
+    */
+}
+
+/* Print from mobile */
+@media print {
+    .nav-floating,
+    .particles-container,
+    .floating-shapes-container,
+    .scroll-progress,
+    .app-store-btn,
+    .coming-soon-badge {
+        display: none !important;
+    }
+
+    .app-card {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+
+/* Loading state for mobile */
+.mobile-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--color-paper);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.mobile-loading.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* PWA support */
+@media (display-mode: standalone) {
+    .nav-floating {
+        top: calc(var(--space-md) + env(safe-area-inset-top));
+    }
+}

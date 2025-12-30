@@ -419,19 +419,20 @@ ul > li::before {
     }
 
     .nav-floating {
-        flex-direction: column;
+        flex-direction: row;
         gap: var(--space-sm);
-        padding: var(--space-md);
+        padding: var(--space-sm) var(--space-md);
+        top: var(--space-sm);
     }
 
     .nav-links {
-        flex-direction: column;
-        width: 100%;
+        flex-direction: row;
+        gap: var(--space-sm);
     }
 
     .nav-link {
-        width: 100%;
-        text-align: center;
+        font-size: var(--font-size-xs);
+        padding: 6px 12px;
     }
 
     .hero {
@@ -441,6 +442,15 @@ ul > li::before {
     .card {
         padding: var(--space-lg);
     }
+
+    /* Better touch targets for mobile */
+    a, button, .nav-link, .btn {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -448,14 +458,35 @@ ul > li::before {
         --space-3xl: 3rem;
         --space-2xl: 2.5rem;
         --space-xl: 2rem;
+        --font-size-4xl: 2rem;
+        --font-size-3xl: 1.75rem;
     }
 
     h1 {
         font-size: var(--font-size-3xl);
+        letter-spacing: -0.01em;
     }
 
     h2 {
         font-size: var(--font-size-2xl);
+    }
+
+    .container {
+        padding: var(--space-md) var(--space-sm);
+    }
+
+    .nav-floating {
+        padding: 8px 12px;
+        margin-bottom: var(--space-lg);
+    }
+
+    .nav-brand {
+        font-size: var(--font-size-base);
+    }
+
+    .nav-link {
+        font-size: 11px;
+        padding: 6px 10px;
     }
 }
 
