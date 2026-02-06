@@ -116,6 +116,38 @@
     transform: scale(1.05) rotate(2deg);
 }
 
+/* App Store Icon Styles */
+.app-icon-store {
+    width: 100px;
+    height: 100px;
+    border-radius: 22.37%;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 12px rgba(44, 40, 32, 0.15),
+                0 2px 4px rgba(44, 40, 32, 0.1);
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.app-store-icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.app-icon-placeholder {
+    background: linear-gradient(135deg, var(--color-accent-blue-light), var(--color-accent-blue));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-card:hover .app-icon-store {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 8px 20px rgba(44, 40, 32, 0.2),
+                0 4px 8px rgba(44, 40, 32, 0.15);
+}
+
 /* Badges */
 .badge {
     display: inline-block;

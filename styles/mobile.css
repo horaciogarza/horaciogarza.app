@@ -142,7 +142,8 @@
         padding: var(--space-sm);
     }
 
-    .app-icon {
+    .app-icon,
+    .app-icon-store {
         width: 60px;
         height: 60px;
     }
