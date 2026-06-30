@@ -73,6 +73,11 @@ class PremiumAnimations {
 
         if (parallaxElements.length === 0) return;
 
+        // Cache each element's natural document-relative center so the
+        // parallax offset can be derived from its position in the viewport
+        // rather than the unbounded absolute scroll position.
+        this.cacheParallaxPositions(parallaxElements);
+
         let ticking = false;
 
         window.addEventListener('scroll', () => {
@@ -84,14 +89,44 @@ class PremiumAnimations {
                 ticking = true;
             }
         });
+
+        window.addEventListener('resize', () => {
+            this.cacheParallaxPositions(parallaxElements);
+            this.updateParallax(parallaxElements);
+        });
+
+        // Apply once on load so positions are correct before any scrolling
+        this.updateParallax(parallaxElements);
+    }
+
+    cacheParallaxPositions(elements) {
+        const scrolled = window.pageYOffset;
+        elements.forEach(element => {
+            // Neutralize any transform we previously applied before measuring
+            const previous = element.style.transform;
+            element.style.transform = 'none';
+            const rect = element.getBoundingClientRect();
+            element.style.transform = previous;
+            // Document-relative center of the element in its resting position
+            element._parallaxCenter = rect.top + scrolled + rect.height / 2;
+        });
     }
 
     updateParallax(elements) {
         const scrolled = window.pageYOffset;
+        const viewportCenter = scrolled + window.innerHeight / 2;
+        // Keep the effect subtle and bounded so icons never leave their cards
+        const maxOffset = 40;
 
         elements.forEach(element => {
-            const speed = element.dataset.parallaxSpeed || 0.5;
-            const yPos = -(scrolled * speed);
+            const speed = parseFloat(element.dataset.parallaxSpeed) || 0.5;
+            const center = element._parallaxCenter;
+            if (center == null) return;
+            // Distance of the element's center from the viewport center,
+            // so the offset is ~0 while the element sits in view.
+            const fromCenter = center - viewportCenter;
+            let yPos = -(fromCenter * speed * 0.15);
+            yPos = Math.max(-maxOffset, Math.min(maxOffset, yPos));
             element.style.transform = `translateY(${yPos}px)`;
         });
     }
