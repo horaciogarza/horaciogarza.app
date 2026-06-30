@@ -1,153 +1,160 @@
-KAGIRU PRIVACY POLICY
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Kagiru - Understanding how we protect your data">
+    <title>Privacy Policy - Kagiru</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6811490856416526"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <div class="container container-narrow">
+        <!-- Navigation -->
+        <nav class="nav-floating">
+            <div class="nav-brand">Kagiru</div>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="terms_and_conditions.html" class="nav-link">Terms</a>
+            </div>
+        </nav>
 
-Last updated: June 2026
+        <!-- Header -->
+        <header class="hero">
+            <h1>Privacy Policy</h1>
+            <p class="meta">Last updated: June 2026</p>
+        </header>
 
-Kagiru (限) is a strength-training tracking app. Your workout data is stored
-entirely on your device. To keep the app free, Kagiru shows ads through Google
-AdMob, which does collect certain data for advertising purposes. This policy
-explains what information the app handles and how your privacy is protected.
+        <!-- Introduction -->
+        <section class="section">
+            <p>Kagiru (限) is a strength-training tracking app. Your workout data is stored entirely on your device. To keep the app free, Kagiru shows ads through Google AdMob, which does collect certain data for advertising purposes. This policy explains what information the app handles and how your privacy is protected.</p>
+            <div class="card">
+                <p><strong>Summary:</strong> Kagiru has no user accounts and no servers of its own, and your workout data never leaves your device. The only data collection comes from the Google AdMob advertising SDK, described in section 2.</p>
+            </div>
+        </section>
 
-Summary: Kagiru has no user accounts and no servers of its own, and your workout
-data never leaves your device. The only data collection comes from the Google
-AdMob advertising SDK, described in section 2.
+        <hr class="divider">
 
+        <!-- 1. Data the App Stores -->
+        <section class="content-block">
+            <h2>1. Data the App Stores (Locally)</h2>
+            <p>Kagiru stores the following information exclusively on your device, using Apple's SwiftData framework:</p>
+            <ul>
+                <li>Exercise routines you create</li>
+                <li>Training sessions, sets, reps, and logged weights</li>
+                <li>Personal records (PRs)</li>
+                <li>XP, level, streak, and training-day progress</li>
+                <li>Badges (achievements) you unlock</li>
+                <li>Dashboard chart configuration</li>
+                <li>App preferences (name, weight unit, rest timer, notification settings)</li>
+            </ul>
+            <p>This information never leaves your device, except for the optional Apple Health sync described in section 4. Kagiru does not transmit, sell, or share your workout data.</p>
+        </section>
 
-1. DATA THE APP STORES (LOCALLY)
+        <!-- 2. Advertising -->
+        <section class="content-block">
+            <h2>2. Advertising (Google AdMob)</h2>
+            <p>Kagiru shows ads through Google AdMob, an advertising service provided by Google LLC. To serve and measure those ads, Google's SDK may collect and process:</p>
+            <ul>
+                <li>Device identifiers, including the advertising identifier (IDFA) when you authorize it</li>
+                <li>IP address and approximate (not precise) location</li>
+                <li>Device information (model, operating system, language)</li>
+                <li>Ad interaction data (impressions and taps)</li>
+            </ul>
+            <p>This data is collected and processed by Google as an independent data controller, in accordance with its own privacy policy. It is used to serve ads, measure their performance, and prevent fraud, and — where you give consent — to show personalized ads.</p>
+            <p><strong>App Tracking Transparency (ATT) and consent:</strong> on first launch, iOS will ask for your permission to track (App Tracking Transparency) and, where applicable (for example in the EU/EEA), a Google consent form will be shown. If you decline tracking or do not consent, Google will serve only non-personalized ads.</p>
+            <p>You can manage or reset your advertising identifier in iOS Settings &gt; Privacy &amp; Security &gt; Tracking and &gt; Apple Advertising. More information about Google's data practices:</p>
+            <div class="card">
+                <ul>
+                    <li><strong>Google Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></li>
+                    <li><strong>How Google uses data:</strong> <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">policies.google.com/technologies/partner-sites</a></li>
+                </ul>
+            </div>
+        </section>
 
-Kagiru stores the following information exclusively on your device, using
-Apple's SwiftData framework:
+        <!-- 3. Data Kagiru Does Not Collect -->
+        <section class="content-block">
+            <h2>3. Data Kagiru Does Not Collect Directly</h2>
+            <p>Kagiru itself (apart from the Google AdMob SDK described in section 2) does <strong>not</strong> collect or have access to:</p>
+            <ul>
+                <li>Your real name, email address, or phone number</li>
+                <li>Your precise location</li>
+                <li>Your contacts, photos, microphone, or camera</li>
+                <li>Your workout or health data for advertising purposes</li>
+            </ul>
+            <p>Kagiru contains no first-party analytics SDKs and does not send your workout data to any server.</p>
+        </section>
 
-   • Exercise routines you create
-   • Training sessions, sets, reps, and logged weights
-   • Personal records (PRs)
-   • XP, level, streak, and training-day progress
-   • Badges (achievements) you unlock
-   • Dashboard chart configuration
-   • App preferences (name, weight unit, rest timer, notification settings)
+        <!-- 4. Apple Health -->
+        <section class="content-block">
+            <h2>4. Apple Health (HealthKit)</h2>
+            <p>Apple Health sync is optional and turned off by default. It is enabled only if you choose to from Settings, at which point the system will ask for your explicit permission.</p>
+            <p>When enabled:</p>
+            <ul>
+                <li>For each strength workout you complete, Kagiru <strong>writes</strong> only an activity record to Health: activity type (traditional strength training), date, start time, end time, and duration.</li>
+                <li>Kagiru does <strong>not</strong> write calories, heart rate, or any other health data. Those measurements are left to the Apple Watch, which records them accurately.</li>
+                <li>Kagiru <strong>reads</strong> your existing workouts in Health for one purpose only: to detect whether your Apple Watch (or another app) already logged a session overlapping yours, so it can avoid creating duplicate entries.</li>
+            </ul>
+            <p>Apple Health data stays on your device under the control of Apple Health and is shared only with the apps you authorize. Kagiru never uses health data for advertising, never shares it with Google or any other third party, and never stores it outside Apple Health. You can revoke access at any time from iOS Settings &gt; Health, or turn the feature off from within Kagiru's Settings.</p>
+        </section>
 
-This information never leaves your device, except for the optional Apple Health
-sync described in section 4. Kagiru does not transmit, sell, or share your
-workout data.
+        <!-- 5. Notifications -->
+        <section class="content-block">
+            <h2>5. Notifications</h2>
+            <p>If you enable reminders, Kagiru schedules local notifications on your device to remind you of your training schedule and to protect your streak. These notifications are 100% local: no push notification server is used and no data leaves your device. You can disable them at any time from Settings.</p>
+        </section>
 
+        <!-- 6. Storage and Backups -->
+        <section class="content-block">
+            <h2>6. Storage and Backups</h2>
+            <p>All of your workout data is stored locally with SwiftData. If you have iCloud backup enabled for your device, this data may be included in your device's encrypted backup, managed by Apple. Kagiru does not separately store personal health data in iCloud.</p>
+        </section>
 
-2. ADVERTISING (GOOGLE ADMOB)
+        <!-- 7. Sharing Data with Third Parties -->
+        <section class="content-block">
+            <h2>7. Sharing Data with Third Parties</h2>
+            <p>Apart from the data collected by the Google AdMob SDK to serve ads (section 2), Kagiru does not share, sell, or transfer your data to third parties. Your workout data stays on your device and is not shared with Google or anyone else.</p>
+        </section>
 
-Kagiru shows ads through Google AdMob, an advertising service provided by Google
-LLC. To serve and measure those ads, Google's SDK may collect and process:
+        <!-- 8. Children's Privacy -->
+        <section class="content-block">
+            <h2>8. Children's Privacy</h2>
+            <p>Kagiru is not directed to children and does not knowingly collect information from them. The advertising shown is not directed to children. If you believe a child has provided us with information, contact us so we can remove it.</p>
+        </section>
 
-   • Device identifiers, including the advertising identifier (IDFA) when you
-     authorize it
-   • IP address and approximate (not precise) location
-   • Device information (model, operating system, language)
-   • Ad interaction data (impressions and taps)
+        <!-- 9. Deleting Your Data -->
+        <section class="content-block">
+            <h2>9. Deleting Your Data</h2>
+            <p>You can delete all of your workout data at any time from:</p>
+            <div class="card">
+                <p><strong>Settings &gt; Delete all data</strong></p>
+            </div>
+            <p>You can also delete the app from your device, which permanently removes all locally stored data associated with the app. To limit the use of your advertising identifier, adjust the tracking options in iOS Settings as described in section 2.</p>
+        </section>
 
-This data is collected and processed by Google as an independent data
-controller, in accordance with its own privacy policy. It is used to serve ads,
-measure their performance, and prevent fraud, and — where you give consent — to
-show personalized ads.
+        <!-- 10. Changes -->
+        <section class="content-block">
+            <h2>10. Changes to This Policy</h2>
+            <p>We may update this privacy policy from time to time. Any change will be reflected in the "Last updated" date at the top of this document.</p>
+        </section>
 
-App Tracking Transparency (ATT) and consent: on first launch, iOS will ask for
-your permission to track (App Tracking Transparency) and, where applicable (for
-example in the EU/EEA), a Google consent form will be shown. If you decline
-tracking or do not consent, Google will serve only NON-personalized ads.
+        <!-- 11. Contact -->
+        <section class="content-block">
+            <h2>11. Contact</h2>
+            <p>If you have questions about this privacy policy, you can reach us at:</p>
+            <p><a href="mailto:hgx95@hotmail.com">hgx95@hotmail.com</a><br>
+            <a href="https://horaciogarza.app/kagiru" target="_blank" rel="noopener noreferrer">horaciogarza.app/kagiru</a></p>
+        </section>
 
-You can manage or reset your advertising identifier in iOS Settings > Privacy &
-Security > Tracking and > Apple Advertising. More information about Google's data
-practices:
-
-   • Google Privacy Policy: https://policies.google.com/privacy
-   • How Google uses data: https://policies.google.com/technologies/partner-sites
-
-
-3. DATA KAGIRU DOES NOT COLLECT DIRECTLY
-
-Kagiru itself (apart from the Google AdMob SDK described in section 2) does NOT
-collect or have access to:
-
-   • Your real name, email address, or phone number
-   • Your precise location
-   • Your contacts, photos, microphone, or camera
-   • Your workout or health data for advertising purposes
-
-Kagiru contains no first-party analytics SDKs and does not send your workout data
-to any server.
-
-
-4. APPLE HEALTH (HEALTHKIT)
-
-Apple Health sync is optional and turned off by default. It is enabled only if
-you choose to from Settings, at which point the system will ask for your
-explicit permission.
-
-When enabled:
-
-   • For each strength workout you complete, Kagiru WRITES only an activity
-     record to Health: activity type (traditional strength training), date,
-     start time, end time, and duration.
-   • Kagiru does NOT write calories, heart rate, or any other health data. Those
-     measurements are left to the Apple Watch, which records them accurately.
-   • Kagiru READS your existing workouts in Health for one purpose only: to
-     detect whether your Apple Watch (or another app) already logged a session
-     overlapping yours, so it can avoid creating duplicate entries.
-
-Apple Health data stays on your device under the control of Apple Health and is
-shared only with the apps you authorize. Kagiru NEVER uses health data for
-advertising, never shares it with Google or any other third party, and never
-stores it outside Apple Health. You can revoke access at any time from iOS
-Settings > Health, or turn the feature off from within Kagiru's Settings.
-
-
-5. NOTIFICATIONS
-
-If you enable reminders, Kagiru schedules local notifications on your device to
-remind you of your training schedule and to protect your streak. These
-notifications are 100% local: no push notification server is used and no data
-leaves your device. You can disable them at any time from Settings.
-
-
-6. STORAGE AND BACKUPS
-
-All of your workout data is stored locally with SwiftData. If you have iCloud
-backup enabled for your device, this data may be included in your device's
-encrypted backup, managed by Apple. Kagiru does not separately store personal
-health data in iCloud.
-
-
-7. SHARING DATA WITH THIRD PARTIES
-
-Apart from the data collected by the Google AdMob SDK to serve ads (section 2),
-Kagiru does not share, sell, or transfer your data to third parties. Your workout
-data stays on your device and is not shared with Google or anyone else.
-
-
-8. CHILDREN'S PRIVACY
-
-Kagiru is not directed to children and does not knowingly collect information
-from them. The advertising shown is not directed to children. If you believe a
-child has provided us with information, contact us so we can remove it.
-
-
-9. DELETING YOUR DATA
-
-You can delete all of your workout data at any time from:
-
-   Settings > Delete all data
-
-You can also delete the app from your device, which permanently removes all
-locally stored data associated with the app. To limit the use of your
-advertising identifier, adjust the tracking options in iOS Settings as described
-in section 2.
-
-
-10. CHANGES TO THIS POLICY
-
-We may update this privacy policy from time to time. Any change will be
-reflected in the "Last updated" date at the top of this document.
-
-
-11. CONTACT
-
-If you have questions about this privacy policy, you can reach us at:
-
-   hgx95@hotmail.com
-   https://horaciogarza.app/kagiru
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="terms_and_conditions.html">Terms &amp; Conditions</a>
+            </div>
+            <p>&copy; 2026 Kagiru. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
