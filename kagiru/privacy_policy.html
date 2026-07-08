@@ -23,14 +23,14 @@
         <!-- Header -->
         <header class="hero">
             <h1>Privacy Policy</h1>
-            <p class="meta">Last updated: June 2026</p>
+            <p class="meta">Last updated: July 2026</p>
         </header>
 
         <!-- Introduction -->
         <section class="section">
-            <p>Kagiru (限) is a strength-training tracking app. Your workout data is stored entirely on your device. To keep the app free, Kagiru shows ads through Google AdMob, which does collect certain data for advertising purposes. This policy explains what information the app handles and how your privacy is protected.</p>
+            <p>Kagiru (限) is a strength-training tracking app. Your workout data is stored on your device and, if you have iCloud enabled, synced to your private iCloud database so it stays backed up and available across your devices. To keep the app free, Kagiru shows ads through Google AdMob, which does collect certain data for advertising purposes. This policy explains what information the app handles and how your privacy is protected.</p>
             <div class="card">
-                <p><strong>Summary:</strong> Kagiru has no user accounts and no servers of its own, and your workout data never leaves your device. The only data collection comes from the Google AdMob advertising SDK, described in section 2.</p>
+                <p><strong>Summary:</strong> Kagiru has no user accounts and no servers of its own. Your workout data lives on your device and, optionally, in your private iCloud database — which only you can access; we cannot read it. The only data collection comes from the Google AdMob advertising SDK, described in section 2.</p>
             </div>
         </section>
 
@@ -38,8 +38,8 @@
 
         <!-- 1. Data the App Stores -->
         <section class="content-block">
-            <h2>1. Data the App Stores (Locally)</h2>
-            <p>Kagiru stores the following information exclusively on your device, using Apple's SwiftData framework:</p>
+            <h2>1. Data the App Stores</h2>
+            <p>Kagiru stores the following information on your device, using Apple's SwiftData framework:</p>
             <ul>
                 <li>Exercise routines you create</li>
                 <li>Training sessions, sets, reps, and logged weights</li>
@@ -49,7 +49,7 @@
                 <li>Dashboard chart configuration</li>
                 <li>App preferences (name, weight unit, rest timer, notification settings)</li>
             </ul>
-            <p>This information never leaves your device, except for the optional Apple Health sync described in section 4. Kagiru does not transmit, sell, or share your workout data.</p>
+            <p>This information never leaves your device, except for the iCloud sync described in section 6 (which goes only to your own private iCloud database) and the optional Apple Health sync described in section 4. Kagiru does not transmit, sell, or share your workout data.</p>
         </section>
 
         <!-- 2. Advertising -->
@@ -83,7 +83,7 @@
                 <li>Your contacts, photos, microphone, or camera</li>
                 <li>Your workout or health data for advertising purposes</li>
             </ul>
-            <p>Kagiru contains no first-party analytics SDKs and does not send your workout data to any server.</p>
+            <p>Kagiru contains no first-party analytics SDKs and has no server of its own. iCloud sync (section 6) transfers your data only between your devices and your own private iCloud database, operated by Apple — we never see it.</p>
         </section>
 
         <!-- 4. Apple Health -->
@@ -105,16 +105,23 @@
             <p>If you enable reminders, Kagiru schedules local notifications on your device to remind you of your training schedule and to protect your streak. These notifications are 100% local: no push notification server is used and no data leaves your device. You can disable them at any time from Settings.</p>
         </section>
 
-        <!-- 6. Storage and Backups -->
+        <!-- 6. iCloud Sync, Storage and Backups -->
         <section class="content-block">
-            <h2>6. Storage and Backups</h2>
-            <p>All of your workout data is stored locally with SwiftData. If you have iCloud backup enabled for your device, this data may be included in your device's encrypted backup, managed by Apple. Kagiru does not separately store personal health data in iCloud.</p>
+            <h2>6. iCloud Sync, Storage and Backups</h2>
+            <p>Kagiru stores your workout data locally with SwiftData and, when you are signed in to iCloud, syncs it automatically to your <strong>private iCloud database</strong> using Apple's CloudKit service. This keeps your data backed up and available if you reinstall the app or use more than one device.</p>
+            <ul>
+                <li>The data goes only to the private iCloud database tied to your Apple Account. It is encrypted by Apple in transit and at rest.</li>
+                <li><strong>Only you can access it.</strong> Kagiru's developer cannot read, query, or export your private iCloud data, and never receives a copy of it.</li>
+                <li>Sync is handled entirely by Apple's infrastructure; no third party (including Google) is involved.</li>
+                <li>The app works fully offline. If you are not signed in to iCloud, or disable iCloud for Kagiru in iOS Settings &gt; [your name] &gt; iCloud, your data simply stays on your device.</li>
+            </ul>
+            <p>Independently of CloudKit sync, if you have device backups enabled (iCloud Backup or computer backups), your data may also be included in your device's encrypted backup, managed by Apple.</p>
         </section>
 
         <!-- 7. Sharing Data with Third Parties -->
         <section class="content-block">
             <h2>7. Sharing Data with Third Parties</h2>
-            <p>Apart from the data collected by the Google AdMob SDK to serve ads (section 2), Kagiru does not share, sell, or transfer your data to third parties. Your workout data stays on your device and is not shared with Google or anyone else.</p>
+            <p>Apart from the data collected by the Google AdMob SDK to serve ads (section 2), Kagiru does not share, sell, or transfer your data to third parties. Your workout data stays on your device and in your private iCloud database, and is not shared with Google or anyone else. Apple acts solely as the storage provider for your own iCloud data, under your Apple Account.</p>
         </section>
 
         <!-- 8. Children's Privacy -->
@@ -130,7 +137,7 @@
             <div class="card">
                 <p><strong>Settings &gt; Delete all data</strong></p>
             </div>
-            <p>You can also delete the app from your device, which permanently removes all locally stored data associated with the app. To limit the use of your advertising identifier, adjust the tracking options in iOS Settings as described in section 2.</p>
+            <p>When iCloud sync is active, deletions made in the app propagate to your private iCloud database as well. You can also delete the app from your device, which removes all locally stored data; to remove any remaining iCloud copy, go to iOS Settings &gt; [your name] &gt; iCloud &gt; Manage Account Storage and delete Kagiru's data. To limit the use of your advertising identifier, adjust the tracking options in iOS Settings as described in section 2.</p>
         </section>
 
         <!-- 10. Changes -->
