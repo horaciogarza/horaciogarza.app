@@ -1,17 +1,24 @@
 ---
+import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 interface Props { posts: CollectionEntry<'posts'>[] }
 const { posts } = Astro.props;
-const fmt = (d: Date) =>
-  d.toISOString().slice(0, 10);
+const fmt = (d: Date) => d.toISOString().slice(0, 10);
 ---
-<!-- SELECT id, pub_date, title FROM posts WHERE draft = FALSE ORDER BY pub_date DESC; -->
+<!-- SELECT id, pub_date, title, hero_image FROM posts WHERE draft = FALSE ORDER BY pub_date DESC; -->
 <ul class="posts">
   {posts.map((p) => (
     <li class="reveal">
       <a class="post-row plain" href={`/blog/${p.id}`}>
         <time datetime={p.data.pubDate.toISOString()}>{fmt(p.data.pubDate)}</time>
-        <div>
+        <div class="post-thumb">
+          {p.data.heroImage ? (
+            <Image src={p.data.heroImage} alt="" width={320} height={200} loading="lazy" decoding="async" />
+          ) : (
+            <span class="thumb-null" aria-hidden="true">NULL</span>
+          )}
+        </div>
+        <div class="post-text">
           <h3>{p.data.title}</h3>
           <p>{p.data.description}</p>
           {p.data.tags.length > 0 && (

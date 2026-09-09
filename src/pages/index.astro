@@ -20,14 +20,15 @@ const shipped = apps.filter((a) => a.status === 'live');
   </section>
 
   <section class="wrap pb-sec">
+    <h2 class="section-h">Posts</h2>
     <p class="sql">SELECT * FROM posts ORDER BY pub_date DESC LIMIT 6;</p>
     <PostList posts={posts} />
     <p class="mt-2"><a href="/blog">all posts →</a></p>
   </section>
 
   <section class="wrap pb-page">
+    <h2 class="section-h">Published Apps</h2>
     <p class="sql">SELECT name FROM apps WHERE status = 'shipped';</p>
-    <h2 class="h-sub">Apps I&rsquo;ve shipped</h2>
     <div class="app-strip">
       {shipped.map((a) => (
         <a class="app-chip plain" href="/apps">

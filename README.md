@@ -22,10 +22,17 @@ description: "One sentence for the listing, the RSS feed and the OG tags."
 pubDate: 2026-04-01
 tags: ["swift"]
 draft: false          # optional — drafts are hidden in production builds
+heroImage: ./cover.jpg   # optional — put the file next to index.md
 ---
 
 Body goes here.
 ```
+
+Every post row on the homepage and `/blog` reserves a fixed image slot, so the
+list does not reflow as art is added. A post without `heroImage` shows a `NULL`
+placeholder in that slot; adding the frontmatter line fills it, and the same
+image runs full-width at the top of the post. Astro resizes and re-encodes it at
+build time, so drop in the original file rather than a hand-optimized one.
 
 Frontmatter is validated by a Zod schema in `src/content.config.ts`; a bad date or a
 missing title fails the build rather than shipping.
