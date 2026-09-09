@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="404" description="No rows returned." noindex={true}>
+  <section class="wrap err prose">
+    <p class="sql">SELECT * FROM pages WHERE url = ?;</p>
+    <h1>0 rows returned</h1>
+<pre>ERROR 1146 (42S02): Table 'site.page' doesn't exist
+Query OK, 0 rows affected (0.00 sec)</pre>
+    <p>The page you asked for isn&rsquo;t in this database.</p>
+    <p>
+      <a href="/">← home</a> &nbsp;·&nbsp;
+      <a href="/blog">blog</a> &nbsp;·&nbsp;
+      <a href="#" data-open-console>open the query console</a>
+    </p>
+  </section>
+</Base>

@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import AppCard from '../components/AppCard.astro';
+import { apps } from '../data/apps';
+
+const live = apps.filter((a) => a.status === 'live');
+const soon = apps.filter((a) => a.status === 'soon');
+---
+<Base title="apps" description="iOS apps built by Horacio Garza, with their privacy policies and support pages.">
+  <section class="wrap pt-page">
+    <div class="prose" data-parallax="0.05">
+      <p class="sql">SELECT * FROM apps ORDER BY status;</p>
+      <h1>Apps</h1>
+      <p style="color:var(--fg-dim)">
+        Small iOS apps, built solo. Privacy policies and support pages live here too —
+        the links below are the ones referenced from the App Store.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap pt-sec pb-sec">
+    <p class="sql">WHERE status = 'shipped'</p>
+    <div class="app-grid">{live.map((a) => <AppCard app={a} />)}</div>
+  </section>
+
+  <section class="wrap pb-page">
+    <p class="sql">WHERE status = 'in development'</p>
+    <div class="app-grid">{soon.map((a) => <AppCard app={a} />)}</div>
+  </section>
+
+</Base>

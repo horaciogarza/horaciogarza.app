@@ -1,0 +1,19 @@
+---
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const links = [
+  { href: '/blog', label: 'blog' },
+  { href: '/apps', label: 'apps' },
+  { href: '/about', label: 'about' },
+];
+const isCurrent = (href: string) => path === href || path.startsWith(href + '/');
+---
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand plain" href="/">horaciogarza<span class="caret">.app</span></a>
+    {links.map((l) => (
+      <a class="navlink plain" href={l.href} aria-current={isCurrent(l.href) ? 'page' : undefined}>{l.label}</a>
+    ))}
+    <button class="icon-btn" data-open-console title="Open query console (press /)" aria-label="Open query console">&gt;_</button>
+    <button class="icon-btn" id="themetoggle" title="Toggle theme" aria-label="Toggle color theme">◐</button>
+  </div>
+</nav>

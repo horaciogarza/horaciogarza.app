@@ -1,0 +1,78 @@
+---
+import '@fontsource-variable/jetbrains-mono';
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import SqlConsole from '../components/SqlConsole.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogType?: string;
+  noindex?: boolean;
+}
+const {
+  title,
+  description = 'Sr Data & AI Engineering Manager with over 10 years of experience | MSc in Data Science for Business | Supply Chain, Finance, Procurement',
+  ogType = 'website',
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname.replace(/\/$/, '') || '/', Astro.site).href;
+const fullTitle = title === 'home' ? 'Horacio Garza' : `${title} — Horacio Garza`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="alternate" type="application/rss+xml" title="Horacio Garza" href="/rss.xml" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script is:inline>
+      // -- restore theme before first paint to avoid a flash
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6811490856416526" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!--
+      SELECT * FROM posts WHERE draft = FALSE ORDER BY pub_date DESC;
+      -- you found the source. press "/" on the page for the real thing.
+    -->
+    <div class="grid-bg" aria-hidden="true"></div>
+    <a href="#main" class="plain" style="position:absolute;left:-9999px">Skip to content</a>
+    <Nav />
+    <main id="main"><slot /></main>
+    <Footer />
+    <SqlConsole />
+    <script>
+      import '../scripts/motion.ts';
+      import '../scripts/console.ts';
+
+      const root = document.documentElement;
+      const btn = document.getElementById('themetoggle');
+      const current = () =>
+        root.dataset.theme ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      btn?.addEventListener('click', () => {
+        const next = current() === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+    </script>
+  </body>
+</html>
