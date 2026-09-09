@@ -455,3 +455,5 @@ main { min-height: 60vh; padding-bottom: 5rem; }
 
 /* a section that is both the page gutter and the reading column stays left-aligned */
 .wrap.prose { max-width: calc(var(--measure) + var(--pad) * 2); margin-inline: 0; }
+
+.lede-sep { color: var(--muted); }
