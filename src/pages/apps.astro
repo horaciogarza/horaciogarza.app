@@ -23,19 +23,9 @@ const soon = apps.filter((a) => a.status === 'soon');
     <div class="app-grid">{live.map((a) => <AppCard app={a} />)}</div>
   </section>
 
-  <section class="wrap pb-sec">
+  <section class="wrap pb-page">
     <p class="sql">WHERE status = 'in development'</p>
     <div class="app-grid">{soon.map((a) => <AppCard app={a} />)}</div>
   </section>
 
-  <section class="wrap prose pb-page">
-    <p class="sql">UNION ALL — other projects</p>
-    <h2 class="h-sub">Mexico Trends Bot</h2>
-    <p style="color:var(--fg-dim)">
-      An automated, objective and apolitical bot that explains trending topics in Mexico.
-      No followers, no clickbait — just recursive, unbiased information about what is happening.
-    </p>
-    <blockquote>Automático, objetivo, apolítico y recursivo. Seguidores y clickbait NO es prioridad.</blockquote>
-    <p><a href="https://x.com/mx_trends" target="_blank" rel="noopener noreferrer">@mx_trends on X →</a></p>
-  </section>
 </Base>
