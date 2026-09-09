@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import { getPosts } from '../lib/posts';
+import { apps } from '../data/apps';
+
+const posts = (await getPosts()).slice(0, 6);
+const shipped = apps.filter((a) => a.status === 'live');
+---
+<Base title="home">
+  <section class="wrap hero">
+    <div class="prose" data-parallax="0.06">
+      <p class="sql">USE horaciogarza;</p>
+      <h1>Horacio Garza<span class="cursor" aria-hidden="true"></span></h1>
+      <p class="lede">
+        iOS developer in Mexico. I build small, private-by-default apps and write
+        about what breaks along the way — Swift, SwiftUI, App Store realities,
+        and the occasional database tangent.
+      </p>
+      <p class="console-hint">
+        Press <kbd>/</kbd> to query this site.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap pb-sec">
+    <p class="sql">SELECT * FROM posts ORDER BY pub_date DESC LIMIT 6;</p>
+    <PostList posts={posts} />
+    <p class="mt-2"><a href="/blog">all posts →</a></p>
+  </section>
+
+  <section class="wrap pb-page">
+    <p class="sql">SELECT name FROM apps WHERE status = 'shipped';</p>
+    <h2 class="h-sub">Apps I&rsquo;ve shipped</h2>
+    <div class="app-strip">
+      {shipped.map((a) => (
+        <a class="app-chip plain" href="/apps">
+          <img src={a.icon} alt="" width="26" height="26" loading="lazy" decoding="async" />
+          {a.name}
+        </a>
+      ))}
+    </div>
+    <p class="mt-1"><a href="/apps">all apps &amp; support pages →</a></p>
+  </section>
+</Base>

@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import { getPosts } from '../../lib/posts';
+
+const posts = await getPosts();
+const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
+---
+<Base title="blog" description="Posts by Horacio Garza on iOS, Swift and shipping software.">
+  <section class="wrap pt-page pb-page">
+    <p class="sql">SELECT * FROM posts ORDER BY pub_date DESC;</p>
+    <h1>Blog</h1>
+    {tags.length > 0 && (
+      <div class="tags tags-filter">
+        <span class="sql sql-inline">GROUP BY tag:</span>
+        {tags.map((t) => <a class="tag" href={`/tags/${t}`}>{t}</a>)}
+      </div>
+    )}
+    <PostList posts={posts} />
+    <p class="sql" class="mt-1">{posts.length} row{posts.length === 1 ? '' : 's'} in set (0.00 sec)</p>
+  </section>
+</Base>

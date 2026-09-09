@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { posts: CollectionEntry<'posts'>[] }
+const { posts } = Astro.props;
+const fmt = (d: Date) =>
+  d.toISOString().slice(0, 10);
+---
+<!-- SELECT id, pub_date, title FROM posts WHERE draft = FALSE ORDER BY pub_date DESC; -->
+<ul class="posts">
+  {posts.map((p) => (
+    <li class="reveal">
+      <a class="post-row plain" href={`/blog/${p.id}`}>
+        <time datetime={p.data.pubDate.toISOString()}>{fmt(p.data.pubDate)}</time>
+        <div>
+          <h3>{p.data.title}</h3>
+          <p>{p.data.description}</p>
+          {p.data.tags.length > 0 && (
+            <div class="tags">{p.data.tags.map((t) => <span class="tag">{t}</span>)}</div>
+          )}
+        </div>
+      </a>
+    </li>
+  ))}
+</ul>
+{posts.length === 0 && <p class="sql">Empty set (0.00 sec)</p>}

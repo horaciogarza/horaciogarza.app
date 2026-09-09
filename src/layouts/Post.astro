@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Base from './Base.astro';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+  words: number;
+  prev?: CollectionEntry<'posts'>;
+  next?: CollectionEntry<'posts'>;
+}
+const { post, words, prev, next } = Astro.props;
+const { title, description, pubDate, updatedDate, tags } = post.data;
+const minutes = Math.max(1, Math.round(words / 220));
+const iso = (d: Date) => d.toISOString().slice(0, 10);
+---
+<Base title={title} description={description} ogType="article">
+  <article class="wrap">
+    <header class="article-head prose">
+      <p class="sql">SELECT * FROM posts WHERE id = '{post.id}';</p>
+      <h1>{title}</h1>
+      <p style="color:var(--fg-dim);margin-bottom:1rem">{description}</p>
+      <div class="meta">
+        <time datetime={pubDate.toISOString()}>{iso(pubDate)}</time>
+        {updatedDate && <><span class="sep">|</span><span>updated {iso(updatedDate)}</span></>}
+        <span class="sep">|</span><span>{words} words</span>
+        <span class="sep">|</span><span>~{minutes} min</span>
+        {tags.length > 0 && <span class="sep">|</span>}
+        {tags.map((t) => <a class="tag" href={`/tags/${t}`}>{t}</a>)}
+      </div>
+    </header>
+
+    <div class="article-body prose">
+      <slot />
+    </div>
+
+    <nav class="pager prose">
+      <div>
+        {prev && <a class="plain" href={`/blog/${prev.id}`}><span class="sql">LAG()</span>← {prev.data.title}</a>}
+      </div>
+      <div style="text-align:right">
+        {next && <a class="plain" href={`/blog/${next.id}`}><span class="sql">LEAD()</span>{next.data.title} →</a>}
+      </div>
+    </nav>
+  </article>
+</Base>
