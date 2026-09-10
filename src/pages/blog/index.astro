@@ -16,7 +16,24 @@ const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
         {tags.map((t) => <a class="tag" href={`/tags/${t}`}>{t}</a>)}
       </div>
     )}
+    <div class="blog-search" hidden>
+      <label class="ps1" for="blogfilter">WHERE title LIKE</label>
+      <input
+        id="blogfilter"
+        type="search"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="'%…%'"
+        aria-label="Filter posts"
+      />
+    </div>
+
     <PostList posts={posts} />
-    <p class="sql" class="mt-1">{posts.length} row{posts.length === 1 ? '' : 's'} in set (0.00 sec)</p>
+    <p class="sql mt-1" id="blogempty" hidden>Empty set (0.00 sec)</p>
+    <p class="sql mt-1"><span id="blogcount">{posts.length} row{posts.length === 1 ? '' : 's'} in set (0.00 sec)</span></p>
   </section>
+
+  <script>
+    import '../../scripts/blog-filter.ts';
+  </script>
 </Base>

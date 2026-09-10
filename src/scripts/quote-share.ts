@@ -127,3 +127,6 @@ if (pill && body) {
     }
   });
 }
+
+// -- module marker: keeps these top-level consts out of the global scope
+export {};

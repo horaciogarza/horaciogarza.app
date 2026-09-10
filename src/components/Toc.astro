@@ -1,0 +1,23 @@
+---
+import type { MarkdownHeading } from 'astro';
+
+interface Props { headings: MarkdownHeading[] }
+const { headings } = Astro.props;
+
+// h1 is the post title, and h4+ is too granular for a sidebar
+const items = headings.filter((h) => h.depth === 2 || h.depth === 3);
+---
+{items.length >= 4 && (
+  <nav class="toc" aria-label="Table of contents">
+    <details open>
+      <summary><span class="sql">contents</span></summary>
+      <ol>
+        {items.map((h) => (
+          <li class:list={[h.depth === 3 && 'toc-sub']}>
+            <a class="plain" href={`#${h.slug}`}>{h.text}</a>
+          </li>
+        ))}
+      </ol>
+    </details>
+  </nav>
+)}

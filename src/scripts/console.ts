@@ -177,3 +177,6 @@ if (panel && form && input && out) {
   );
   el<HTMLButtonElement>('#sqlclose')?.addEventListener('click', close);
 }
+
+// -- module marker: keeps these top-level consts out of the global scope
+export {};
