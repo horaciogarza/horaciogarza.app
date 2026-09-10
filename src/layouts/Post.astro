@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
 import PostList from '../components/PostList.astro';
 import Share from '../components/Share.astro';
+import Subscribe from '../components/Subscribe.astro';
 
 interface Props {
   post: CollectionEntry<'posts'>;
@@ -45,6 +46,7 @@ const iso = (d: Date) => d.toISOString().slice(0, 10);
       <slot />
     </div>
 
+    <Subscribe />
 
     <nav class="pager prose">
       <div>
