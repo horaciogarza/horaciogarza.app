@@ -10,7 +10,7 @@ export async function getStaticPaths() {
     props: {
       post,
       words: countWords(post.body),
-      more: posts.filter((p) => p.id !== post.id).slice(0, 3),
+      more: posts.filter((p) => p.id !== post.id).slice(0, 4),
     },
   }));
 }
