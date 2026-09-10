@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import PostList from '../components/PostList.astro';
 import { getPosts } from '../lib/posts';
 import { apps } from '../data/apps';
+import Subscribe from '../components/Subscribe.astro';
 
 const posts = (await getPosts()).slice(0, 6);
 const shipped = apps.filter((a) => a.status === 'live');
@@ -26,7 +27,7 @@ const shipped = apps.filter((a) => a.status === 'live');
     <p class="mt-2"><a href="/blog">all posts →</a></p>
   </section>
 
-  <section class="wrap pb-page">
+  <section class="wrap pb-sec">
     <h2 class="section-h">Published Apps</h2>
     <p class="sql">SELECT name FROM apps WHERE status = 'shipped';</p>
     <div class="app-strip">
@@ -38,5 +39,9 @@ const shipped = apps.filter((a) => a.status === 'live');
       ))}
     </div>
     <p class="mt-1"><a href="/apps">all apps &amp; support pages →</a></p>
+  </section>
+
+  <section class="wrap pb-page">
+    <Subscribe />
   </section>
 </Base>
