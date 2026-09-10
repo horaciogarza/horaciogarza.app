@@ -1,0 +1,27 @@
+---
+interface Props {
+  url: string;
+  title: string;
+}
+const { url, title } = Astro.props;
+---
+<!-- SELECT quote FROM article WHERE user_highlighted = TRUE; -->
+<div
+  id="quoteshare"
+  class="quote-share"
+  role="group"
+  aria-label="Share the selected quote"
+  data-url={url}
+  data-title={title}
+  hidden
+>
+  <button type="button" class="quote-btn" data-action="x" aria-label="Share quote on X">
+    <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    Post
+  </button>
+  <span class="quote-sep" aria-hidden="true"></span>
+  <button type="button" class="quote-btn" data-action="copy" aria-label="Copy quote">
+    <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+    <span data-label>Copy</span>
+  </button>
+</div>

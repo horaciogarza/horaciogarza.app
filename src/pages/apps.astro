@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import AppCard from '../components/AppCard.astro';
 import { apps } from '../data/apps';
-import Subscribe from '../components/Subscribe.astro';
 
 const live = apps.filter((a) => a.status === 'live');
 const soon = apps.filter((a) => a.status === 'soon');
@@ -29,7 +28,4 @@ const soon = apps.filter((a) => a.status === 'soon');
     <div class="app-grid">{soon.map((a) => <AppCard app={a} />)}</div>
   </section>
 
-  <section class="wrap pb-page">
-    <Subscribe />
-  </section>
 </Base>
