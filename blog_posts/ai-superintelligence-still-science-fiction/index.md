@@ -3,6 +3,7 @@ title: "Why AI Superintelligence Is Still Science Fiction"
 description: "We might build superintelligence. We just won't be able to tell."
 pubDate: 2026-09-10
 tags: ["ai", "philosophy"]
+heroImage: ./1.webp
 ---
 
 In 1966, the first chatbot, ELIZA, was created by Joseph Weizenbaum. The interesting thing about ELIZA is that it didn't use AI at all — it was just software that matched the words you typed and rephrased them as questions.
@@ -17,17 +18,25 @@ My argument is: if there is no precise definition of intelligence, how would we 
 
 ## We Haven't Figured It Out, Yet
 
+![](./2.webp)
+
 Think about an LLM model — ChatGPT, Claude, Grok, or Gemini. Are they intelligent, or can we just not tell? Dictionaries define intelligence as the ability to learn or understand things, or to deal with new or difficult situations.
 
 First of all, what's "difficult"? While repairing an airplane is difficult for us, there is no chance a border collie could repair it, even though border collies are a smart dog breed.
 
+![](./3.webp)
+
 Intelligence is not something we know precisely. Intelligence as we understand it is a broader, subjective space. If an average MIT engineer travels back to the 3rd or 4th century, they could be the most intelligent person in the whole world — but if the smartest person in ancient Rome travels to the 21st century, they might have average intelligence. This happens because we measure intelligence through comparison instead of anything precise. All humans are considered intelligent, yet some people are smarter than others.
+
+![](./4.webp)
 
 The most accepted method, the IQ test, is highly controversial as to whether it can actually measure intelligence. As a quick refresher: IQ tests were created in the early 20th century to measure the ability to solve certain problems, often called "intelligence," and the questions and scores are periodically updated to keep 100 as the average.
 
 But why can't the IQ test be fixed once and never updated?
 
 ### The Flynn Effect
+
+![](./5.webp)
 
 A couple of decades after the IQ test was implemented, a trend was observed: IQ scores rise about 3 points per decade on average. This is called the Flynn effect. Experts suggest a few theories for why this happens:
 
@@ -42,6 +51,8 @@ So this is why IQ tests need updates. IQ scores aren't an absolute measure of in
 ## Are LLMs Intelligent?
 
 So, what's intelligence? We haven't figured it out yet, but we might somehow understand what it is — it's just not objectively measurable, and not even easy to describe.
+
+![](./6.webp)
 
 Some questions that challenge the intelligence definition:
 
@@ -64,6 +75,8 @@ Here's the challenge: is a human being intelligent by itself, regardless of the 
 
 ## Superintelligence
 
+![](./7.webp)
+
 Superintelligence is the hypothetical software-based AI system with an intellectual scope beyond human intelligence. But based on what we've established, we don't know what intelligence is — so how should we define this? Something that doesn't make mistakes?
 
 Imagine asking a hypothetical superintelligent model something genuinely subjective: *"What's the meaning of life?"* Will it reply with a philosophical or a biological perspective? Should it answer with multiple points of view? Is it not so intelligent because it can't explain it in simple terms?
@@ -71,6 +84,8 @@ Imagine asking a hypothetical superintelligent model something genuinely subject
 This is my point: now that we know intelligence is something more difficult to understand, we're not even close to understanding what superintelligence is.
 
 ### Is Superintelligence Ethical?
+
+![](./8.webp)
 
 How would a superintelligence behave in an ethical space? It seems "intelligence" (again, we don't know exactly what it is) may not be contingent on the time we live in — but the way we measure it might be. A person from the 1300s could still be considered intelligent, even though their answers wouldn't be aligned with 21st-century morality.
 
@@ -88,6 +103,8 @@ Without a way to measure intelligence, we're destined to be exposed to two error
 The second one shapes policies and moves money, and the worst part is that it isn't hypothetical.
 
 ## Final Thoughts
+
+![](./9.webp)
 
 The lack of a definition of intelligence, and a clear view of how to measure it, could make us blind to what we've already achieved. Superintelligence seems to be something that will keep changing, or something that will always sit above our current knowledge — making the intelligence and superintelligence we'll recognize in the year 2100 different from what we imagine today.
 
