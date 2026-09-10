@@ -6,7 +6,7 @@ export async function GET(context: APIContext) {
   const posts = await getPosts();
   return rss({
     title: 'Horacio Garza',
-    description: 'iOS development, Swift, and shipping small apps.',
+    description: 'Data & AI enthusiast, 10+ years of engineering experience.',
     site: context.site!,
     items: posts.map((p) => ({
       title: p.data.title,

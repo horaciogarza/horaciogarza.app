@@ -6,7 +6,7 @@ import { getPosts } from '../../lib/posts';
 const posts = await getPosts();
 const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
 ---
-<Base title="blog" description="Posts by Horacio Garza on iOS, Swift and shipping software.">
+<Base title="blog" description="Posts by Horacio Garza.">
   <section class="wrap pt-page pb-page">
     <h1>Blog</h1>
     <p class="sql">SELECT * FROM posts ORDER BY pub_date DESC;</p>
