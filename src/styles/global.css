@@ -497,13 +497,19 @@ main { min-height: 60vh; padding-bottom: 5rem; }
 .more-posts { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); margin-inline: auto; }
 
 /* ---------- newsletter subscribe embed (inline, end of post) ---------- */
-.subscribe { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); max-width: 32rem; margin-inline: auto; text-align: center; }
+.subscribe { margin-top: 2.5rem; max-width: 32rem; margin-inline: auto; text-align: center; }
 .subscribe .sql { text-align: center; }
 .subscribe-embed { margin-top: 0.5rem; display: flex; justify-content: center; }
 
-/* ---------- share buttons ---------- */
-.share { margin-top: 1.5rem; }
-.share-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+/* ---------- share buttons (end of article) ---------- */
+.share {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+.share-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem; }
 .share-btn {
   display: inline-flex;
   align-items: center;
@@ -521,3 +527,44 @@ main { min-height: 60vh; padding-bottom: 5rem; }
 }
 .share-btn:hover { color: var(--fg); border-color: var(--fg); }
 .share-btn svg { flex: none; }
+
+/* ---------- select-to-share quote pill ---------- */
+.quote-share {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 70;
+  display: flex;
+  align-items: stretch;
+  background: var(--bg);
+  border: 1px solid var(--fg);
+  border-radius: 5px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity 0.15s var(--ease), transform 0.15s var(--ease);
+  pointer-events: none;
+}
+.quote-share.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+.quote-share[hidden] { display: none; }
+.quote-sep { width: 1px; background: var(--line); flex: none; }
+.quote-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font: inherit;
+  font-size: var(--step--1);
+  color: var(--fg-dim);
+  background: none;
+  border: 0;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s var(--ease), background 0.15s var(--ease);
+}
+.quote-btn:hover { color: var(--fg); background: var(--bg-soft); }
+.quote-btn svg { flex: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-share { transition: none; transform: none; }
+}

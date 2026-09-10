@@ -2,11 +2,19 @@
 interface Props {
   url: string;
   title: string;
+  description?: string;
 }
-const { url, title } = Astro.props;
+const { url, title, description } = Astro.props;
 
-const x = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
+// -- lead with the hook, then the title. The description is already written
+// -- as a one-line hook, so it is the best copy we have to open a share with.
+const shareText = description ? `${description}\n\n${title}` : title;
+
+const x = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(url)}`;
+// LinkedIn's share-offsite takes no text param — it scrapes og:description,
+// which Base.astro already fills from this same description.
 const linkedin = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+// Reddit's field is a submission title: single-line, so the plain title fits better.
 const reddit = `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
 ---
 <!-- INSERT INTO shares (post_url) VALUES (?); -->
