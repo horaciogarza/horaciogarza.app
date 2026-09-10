@@ -496,3 +496,24 @@ main { min-height: 60vh; padding-bottom: 5rem; }
 .article-hero img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
 
 .more-posts { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); margin-inline: auto; }
+
+/* ---------- share buttons ---------- */
+.share { margin-top: 1.5rem; }
+.share-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font: inherit;
+  font-size: var(--step--1);
+  color: var(--fg-dim);
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.3rem 0.65rem;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.share-btn:hover { color: var(--fg); border-color: var(--fg); }
+.share-btn svg { flex: none; }
