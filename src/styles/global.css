@@ -622,3 +622,135 @@ main { min-height: 60vh; padding-bottom: 5rem; }
 @media (max-width: 640px) {
   .post-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
+
+/* ---------- reading progress ---------- */
+.read-progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(var(--read-progress, 0));
+  transform-origin: 0 50%;
+  z-index: 90;
+  pointer-events: none;
+}
+
+/* ---------- table of contents ---------- */
+.toc {
+  max-width: var(--measure);
+  margin: 2rem auto 0;
+  border-left: 2px solid var(--line);
+  padding-left: 1.1rem;
+}
+.toc summary {
+  cursor: pointer;
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+.toc summary::-webkit-details-marker { display: none; }
+.toc summary .sql { display: inline; margin: 0; }
+.toc ol { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.3rem 0; font-size: var(--step--1); line-height: 1.5; }
+.toc li.toc-sub { padding-left: 1.2rem; }
+.toc a { color: var(--muted); text-decoration: none; }
+.toc a:hover { color: var(--fg); }
+.toc a.is-active { color: var(--fg); }
+.toc a.is-active::before { content: '> '; color: var(--muted); }
+
+/* Park it in the left gutter only where it actually fits: the wrap is 1080px
+   centered, so a 15rem rail + gap needs (V-1080)/2 >= 17rem => V >= 1624px.
+   Below that it stays inline above the article. */
+@media (min-width: 1624px) {
+  .toc {
+    position: sticky;
+    top: 5rem;
+    float: left;
+    width: 15rem;
+    margin: 0 0 2rem -17rem;
+    max-width: none;
+    border-left: 0;
+    border-right: 2px solid var(--line);
+    padding-left: 0;
+    padding-right: 1.1rem;
+    text-align: right;
+  }
+  .toc li.toc-sub { padding-left: 0; padding-right: 1.2rem; }
+  .toc a.is-active::before { content: none; }
+  .toc a.is-active { text-decoration: underline; text-underline-offset: 0.25em; }
+}
+
+/* ---------- code blocks ---------- */
+.code-block { position: relative; }
+.code-bar {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.15s var(--ease);
+}
+.code-block:hover .code-bar,
+.code-block:focus-within .code-bar { opacity: 1; }
+.code-lang { font-size: var(--step--1); color: var(--muted); }
+.code-copy {
+  font: inherit;
+  font-size: var(--step--1);
+  color: var(--fg-dim);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  cursor: pointer;
+  transition: color 0.15s var(--ease), border-color 0.15s var(--ease);
+}
+.code-copy:hover { color: var(--fg); border-color: var(--fg); }
+
+/* ---------- heading anchors ---------- */
+.heading-anchor {
+  margin-left: 0.5rem;
+  font-size: 0.75em;
+  color: var(--muted);
+  text-decoration: none !important;
+  opacity: 0;
+  transition: opacity 0.15s var(--ease);
+}
+h2:hover > .heading-anchor,
+h3:hover > .heading-anchor,
+.heading-anchor:focus { opacity: 1; }
+/* touch has no hover — keep anchors reachable */
+@media (hover: none) { .heading-anchor { opacity: 0.4; } }
+
+/* deep links shouldn't land under the sticky nav */
+.article-body :is(h2, h3) { scroll-margin-top: 5rem; }
+
+/* ---------- /blog search ---------- */
+.blog-search {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.45rem 0.75rem;
+  margin: 0 0 1.5rem;
+  max-width: 30rem;
+}
+.blog-search:focus-within { border-color: var(--fg); }
+.blog-search .ps1 { color: var(--muted); font-size: var(--step--1); white-space: nowrap; }
+.blog-search input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: 0;
+  outline: none;
+  color: var(--fg);
+  font: inherit;
+  font-size: var(--step--1);
+}
+.blog-search input::-webkit-search-cancel-button { filter: grayscale(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .read-progress { display: none; }
+  .code-bar, .heading-anchor { transition: none; }
+}

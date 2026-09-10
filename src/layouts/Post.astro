@@ -1,25 +1,29 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import type { MarkdownHeading } from 'astro';
 import Base from './Base.astro';
 import PostGrid from '../components/PostGrid.astro';
 import Share from '../components/Share.astro';
 import Subscribe from '../components/Subscribe.astro';
 import QuoteShare from '../components/QuoteShare.astro';
+import Toc from '../components/Toc.astro';
 import AppStrip from '../components/AppStrip.astro';
 
 interface Props {
   post: CollectionEntry<'posts'>;
   words: number;
   more?: CollectionEntry<'posts'>[];
+  headings?: MarkdownHeading[];
 }
-const { post, words, more = [] } = Astro.props;
+const { post, words, more = [], headings = [] } = Astro.props;
 const { title, description, pubDate, updatedDate, tags, heroImage } = post.data;
 const minutes = Math.max(1, Math.round(words / 220));
 const canonical = new URL(Astro.url.pathname.replace(/\/$/, '') || '/', Astro.site).href;
 const iso = (d: Date) => d.toISOString().slice(0, 10);
 ---
-<Base title={title} description={description} ogType="article">
+<Base title={title} description={description} ogType="article" image={`/og/${post.id}.png`}>
+  <div class="read-progress" aria-hidden="true"></div>
   <article class="wrap">
     <header class="article-head prose">
       <p class="sql">SELECT * FROM posts WHERE id = '{post.id}';</p>
@@ -34,6 +38,8 @@ const iso = (d: Date) => d.toISOString().slice(0, 10);
         {tags.map((t) => <a class="tag" href={`/tags/${t}`}>{t}</a>)}
       </div>
     </header>
+
+    <Toc headings={headings} />
 
     {heroImage && (
       <figure class="article-hero prose">
@@ -66,5 +72,7 @@ const iso = (d: Date) => d.toISOString().slice(0, 10);
 
   <script>
     import '../scripts/quote-share.ts';
+    import '../scripts/article-ui.ts';
+    import '../scripts/toc-active.ts';
   </script>
 </Base>
