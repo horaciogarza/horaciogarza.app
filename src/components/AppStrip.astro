@@ -3,7 +3,7 @@ import { apps } from '../data/apps';
 
 const shipped = apps.filter((a) => a.status === 'live');
 ---
-<h2 class="section-h">My Apps</h2>
+<h2 class="section-h">Download My Apps</h2>
 <p class="sql">SELECT name FROM apps WHERE status = 'shipped';</p>
 <div class="app-strip">
   {shipped.map((a) => (
