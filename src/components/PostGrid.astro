@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+interface Props { posts: CollectionEntry<'posts'>[] }
+const { posts } = Astro.props;
+const fmt = (d: Date) => d.toISOString().slice(0, 10);
+---
+<!-- SELECT id, pub_date, title, hero_image FROM posts LIMIT 4; -->
+<ul class="post-grid">
+  {posts.map((p) => (
+    <li class="reveal">
+      <a class="post-card plain" href={`/blog/${p.id}`}>
+        <div class="post-card-thumb">
+          {p.data.heroImage ? (
+            <Image src={p.data.heroImage} alt="" width={640} height={400} loading="lazy" decoding="async" />
+          ) : (
+            <span class="thumb-null" aria-hidden="true">NULL</span>
+          )}
+        </div>
+        <time datetime={p.data.pubDate.toISOString()}>{fmt(p.data.pubDate)}</time>
+        <h3>{p.data.title}</h3>
+        <p>{p.data.description}</p>
+        {p.data.tags.length > 0 && (
+          <div class="tags">{p.data.tags.map((t) => <span class="tag">{t}</span>)}</div>
+        )}
+      </a>
+    </li>
+  ))}
+</ul>

@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
-import PostList from '../components/PostList.astro';
+import PostGrid from '../components/PostGrid.astro';
 import Share from '../components/Share.astro';
 import Subscribe from '../components/Subscribe.astro';
 import QuoteShare from '../components/QuoteShare.astro';
@@ -50,14 +50,14 @@ const iso = (d: Date) => d.toISOString().slice(0, 10);
     <Subscribe />
 
     {more.length > 0 && (
-      <section class="more-posts prose">
+      <section class="more-posts">
         <h2 class="section-h">More posts</h2>
-        <p class="sql">SELECT * FROM posts WHERE id != '{post.id}' ORDER BY pub_date DESC LIMIT 3;</p>
-        <PostList posts={more} />
+        <p class="sql">SELECT * FROM posts WHERE id != '{post.id}' ORDER BY pub_date DESC LIMIT 4;</p>
+        <PostGrid posts={more} />
       </section>
     )}
 
-    <section class="post-apps prose">
+    <section class="post-apps">
       <AppStrip />
     </section>
   </article>
