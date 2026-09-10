@@ -375,10 +375,9 @@ main { min-height: 60vh; padding-bottom: 5rem; }
   background: var(--bg-soft);
   object-fit: cover;
   overflow: hidden;
-  filter: grayscale(1) contrast(1.05);
-  transition: filter 0.35s var(--ease), transform 0.35s var(--ease);
+  transition: transform 0.35s var(--ease);
 }
-.app-card:hover .app-icon { filter: grayscale(0); transform: translateY(-2px); }
+.app-card:hover .app-icon { transform: translateY(-2px); }
 .app-name { margin: 0; font-size: var(--step-1); }
 .app-tagline { margin: 0; color: var(--muted); font-size: var(--step--1); }
 .badge {
@@ -415,7 +414,7 @@ main { min-height: 60vh; padding-bottom: 5rem; }
   transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
 }
 .app-chip:hover { border-color: var(--fg); transform: translateY(-2px); }
-.app-chip img { width: 26px; height: 26px; border-radius: 7px; filter: grayscale(1); }
+.app-chip img { width: 26px; height: 26px; border-radius: 7px; }
 
 /* ---------- reveal + parallax ---------- */
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
@@ -498,8 +497,16 @@ main { min-height: 60vh; padding-bottom: 5rem; }
 .more-posts { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); margin-inline: auto; }
 
 /* ---------- newsletter subscribe embed ---------- */
-.subscribe { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); margin-inline: auto; }
-.subscribe-embed { margin-top: 0.5rem; max-width: 32rem; }
+.subscribe {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  max-width: 32rem;
+  margin-inline: auto;
+  text-align: center;
+}
+.subscribe .sql { text-align: center; }
+.subscribe-embed { margin-top: 0.5rem; display: flex; justify-content: center; }
 
 /* ---------- share buttons ---------- */
 .share { margin-top: 1.5rem; }
