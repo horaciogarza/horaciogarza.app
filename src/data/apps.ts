@@ -16,7 +16,7 @@ export const apps: App[] = [
     description:
       'A memory game with seasonal themes, built family-friendly and privacy-first.',
     status: 'live',
-    icon: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3f/d1/85/3fd185fd-1c76-ae3d-6e87-c9a5e6a8c3a7/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg',
+    icon: '/assets/memorandum/icon-256.webp',
     appStore: 'https://apps.apple.com/mx/app/memorandum-memorize-and-win/id6756941530',
     links: [
       { label: 'Privacy', href: '/Memorandum/privacy.html' },
@@ -42,7 +42,7 @@ export const apps: App[] = [
     description:
       'Find your next favorite restaurant by swiping. Personalized to your location and taste.',
     status: 'live',
-    icon: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a2/ee/6c/a2ee6c23-fd56-6382-ccbf-f2cb42f37f7e/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg',
+    icon: '/assets/explorare/icon-256.webp',
     appStore: 'https://apps.apple.com/us/app/explorare/id6756599099',
     links: [
       { label: 'Privacy', href: '/explorare/privacy.html' },

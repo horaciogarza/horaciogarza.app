@@ -406,15 +406,15 @@ main { min-height: 60vh; padding-bottom: 5rem; }
 /* compact strip on home */
 .app-strip { display: flex; flex-wrap: wrap; gap: 0.9rem; }
 .app-chip {
-  display: flex; align-items: center; gap: 0.55rem;
+  display: flex; align-items: center; gap: 0.65rem;
   border: 1px solid var(--line); border-radius: 999px;
-  padding: 0.3rem 0.85rem 0.3rem 0.35rem;
-  font-size: var(--step--1);
+  padding: 0.45rem 1.1rem 0.45rem 0.45rem;
+  font-size: var(--step-0);
   text-decoration: none !important;
   transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
 }
 .app-chip:hover { border-color: var(--fg); transform: translateY(-2px); }
-.app-chip img { width: 26px; height: 26px; border-radius: 7px; }
+.app-chip img { width: 32px; height: 32px; border-radius: 8px; }
 
 /* ---------- reveal + parallax ---------- */
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
@@ -495,18 +495,6 @@ main { min-height: 60vh; padding-bottom: 5rem; }
 .article-hero img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
 
 .more-posts { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); margin-inline: auto; }
-
-/* ---------- newsletter subscribe embed ---------- */
-.subscribe {
-  margin-top: 3.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--line);
-  max-width: 32rem;
-  margin-inline: auto;
-  text-align: center;
-}
-.subscribe .sql { text-align: center; }
-.subscribe-embed { margin-top: 0.5rem; display: flex; justify-content: center; }
 
 /* ---------- share buttons ---------- */
 .share { margin-top: 1.5rem; }
