@@ -53,6 +53,13 @@ They live in `public/` as untouched HTML so Astro copies them to `dist/` byte-fo
 ```
 
 The deploy workflow diffs each one against `public/` and fails the build if any drift.
+
+`public/CNAME` must match the custom domain configured in Settings -> Pages.
+GitHub reads the domain from the CNAME file inside the published artifact, so a
+mismatch silently reassigns the canonical hostname on the next deploy. The
+canonical domain is the apex, `horaciogarza.app`: it has only A records, while
+`www` also resolves over IPv6 and some mobile carriers cannot route to GitHub's
+IPv6 addresses.
 These pages still use the legacy `public/styles/main.css`, which is why that stylesheet
 stays around; the new site has its own design system in `src/styles/global.css`.
 
