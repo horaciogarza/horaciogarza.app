@@ -1,0 +1,16 @@
+---
+import { apps } from '../data/apps';
+
+const shipped = apps.filter((a) => a.status === 'live');
+---
+<h2 class="section-h">My Apps</h2>
+<p class="sql">SELECT name FROM apps WHERE status = 'shipped';</p>
+<div class="app-strip">
+  {shipped.map((a) => (
+    <a class="app-chip plain" href={a.appStore || '/apps'} target="_blank" rel="noopener noreferrer">
+      <img src={a.icon} alt="" width="32" height="32" loading="lazy" decoding="async" />
+      {a.name}
+    </a>
+  ))}
+</div>
+<p class="mt-1"><a href="/apps">all apps &amp; support pages →</a></p>

@@ -6,15 +6,14 @@ import PostList from '../components/PostList.astro';
 import Share from '../components/Share.astro';
 import Subscribe from '../components/Subscribe.astro';
 import QuoteShare from '../components/QuoteShare.astro';
+import AppStrip from '../components/AppStrip.astro';
 
 interface Props {
   post: CollectionEntry<'posts'>;
   words: number;
-  prev?: CollectionEntry<'posts'>;
-  next?: CollectionEntry<'posts'>;
   more?: CollectionEntry<'posts'>[];
 }
-const { post, words, prev, next, more = [] } = Astro.props;
+const { post, words, more = [] } = Astro.props;
 const { title, description, pubDate, updatedDate, tags, heroImage } = post.data;
 const minutes = Math.max(1, Math.round(words / 220));
 const canonical = new URL(Astro.url.pathname.replace(/\/$/, '') || '/', Astro.site).href;
@@ -50,15 +49,6 @@ const iso = (d: Date) => d.toISOString().slice(0, 10);
 
     <Subscribe />
 
-    <nav class="pager prose">
-      <div>
-        {prev && <a class="plain" href={`/blog/${prev.id}`}><span class="sql">LAG()</span>← {prev.data.title}</a>}
-      </div>
-      <div style="text-align:right">
-        {next && <a class="plain" href={`/blog/${next.id}`}><span class="sql">LEAD()</span>{next.data.title} →</a>}
-      </div>
-    </nav>
-
     {more.length > 0 && (
       <section class="more-posts prose">
         <h2 class="section-h">More posts</h2>
@@ -66,6 +56,10 @@ const iso = (d: Date) => d.toISOString().slice(0, 10);
         <PostList posts={more} />
       </section>
     )}
+
+    <section class="post-apps prose">
+      <AppStrip />
+    </section>
   </article>
 
   <QuoteShare url={canonical} title={title} />

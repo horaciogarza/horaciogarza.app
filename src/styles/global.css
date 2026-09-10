@@ -568,3 +568,5 @@ main { min-height: 60vh; padding-bottom: 5rem; }
 @media (prefers-reduced-motion: reduce) {
   .quote-share { transition: none; transform: none; }
 }
+
+.post-apps { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); margin-inline: auto; }
