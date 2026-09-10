@@ -2,14 +2,16 @@
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
+import PostList from '../components/PostList.astro';
 
 interface Props {
   post: CollectionEntry<'posts'>;
   words: number;
   prev?: CollectionEntry<'posts'>;
   next?: CollectionEntry<'posts'>;
+  more?: CollectionEntry<'posts'>[];
 }
-const { post, words, prev, next } = Astro.props;
+const { post, words, prev, next, more = [] } = Astro.props;
 const { title, description, pubDate, updatedDate, tags, heroImage } = post.data;
 const minutes = Math.max(1, Math.round(words / 220));
 const iso = (d: Date) => d.toISOString().slice(0, 10);
@@ -48,5 +50,13 @@ const iso = (d: Date) => d.toISOString().slice(0, 10);
         {next && <a class="plain" href={`/blog/${next.id}`}><span class="sql">LEAD()</span>{next.data.title} →</a>}
       </div>
     </nav>
+
+    {more.length > 0 && (
+      <section class="more-posts prose">
+        <h2 class="section-h">More posts</h2>
+        <p class="sql">SELECT * FROM posts WHERE id != '{post.id}' ORDER BY pub_date DESC LIMIT 3;</p>
+        <PostList posts={more} />
+      </section>
+    )}
   </article>
 </Base>

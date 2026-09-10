@@ -8,8 +8,8 @@ const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
 ---
 <Base title="blog" description="Posts by Horacio Garza on iOS, Swift and shipping software.">
   <section class="wrap pt-page pb-page">
-    <p class="sql">SELECT * FROM posts ORDER BY pub_date DESC;</p>
     <h1>Blog</h1>
+    <p class="sql">SELECT * FROM posts ORDER BY pub_date DESC;</p>
     {tags.length > 0 && (
       <div class="tags tags-filter">
         <span class="sql sql-inline">GROUP BY tag:</span>
