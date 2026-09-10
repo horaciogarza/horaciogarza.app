@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // SELECT * FROM config WHERE env = 'production';
 export default defineConfig({
-  site: 'https://www.horaciogarza.app',
+  site: 'https://horaciogarza.app',
   output: 'static',
   trailingSlash: 'ignore',
   integrations: [mdx(), sitemap()],
