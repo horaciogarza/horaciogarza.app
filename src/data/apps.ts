@@ -79,8 +79,9 @@ export const apps: App[] = [
     tagline: 'Your Gym Companion',
     description:
       'Strength training logged into XP, levels, streaks and badges. Private by design, optional Apple Health sync.',
-    status: 'soon',
+    status: 'live',
     icon: '/assets/kagiru/icon-256.webp',
+    appStore: 'https://apps.apple.com/mx/app/kagiru-strength-tracker/id6784888404',
     links: [
       { label: 'Privacy', href: '/kagiru/privacy_policy.html' },
       { label: 'Terms', href: '/kagiru/terms_and_conditions.html' },

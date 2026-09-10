@@ -13,13 +13,14 @@ export async function getStaticPaths() {
       // list is newest-first, so the older post sits at the next index
       next: posts[i - 1],
       prev: posts[i + 1],
+      more: posts.filter((p) => p.id !== post.id).slice(0, 3),
     },
   }));
 }
 
-const { post, words, prev, next } = Astro.props;
+const { post, words, prev, next, more } = Astro.props;
 const { Content } = await render(post);
 ---
-<Post post={post} words={words} prev={prev} next={next}>
+<Post post={post} words={words} prev={prev} next={next} more={more}>
   <Content />
 </Post>

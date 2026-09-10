@@ -162,7 +162,7 @@ th { background: var(--bg-soft); }
 
 /* ---------- layout ---------- */
 .wrap { width: 100%; max-width: var(--wide); margin-inline: auto; padding-inline: var(--pad); }
-.prose { max-width: var(--measure); }
+.prose { max-width: var(--measure); margin-inline: auto; }
 .stack > * + * { margin-top: 1rem; }
 .center { margin-inline: auto; }
 
@@ -198,6 +198,7 @@ main { min-height: 60vh; padding-bottom: 5rem; }
   letter-spacing: 0.02em;
   margin-bottom: 0.6rem;
   user-select: none;
+  opacity: 0.55;
 }
 .sql::before { content: '-- '; opacity: 0.6; }
 
@@ -493,3 +494,5 @@ main { min-height: 60vh; padding-bottom: 5rem; }
 .section-h { font-size: var(--step-2); margin-bottom: 0.35rem; }
 .article-hero { margin: 2rem 0 0; }
 .article-hero img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
+
+.more-posts { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
